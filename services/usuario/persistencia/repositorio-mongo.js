@@ -64,6 +64,7 @@ RepositorioUsuarios.prototype.findByEmail = async function(valorEmail) {
         }
         result = usuarioMongo;
     });
+
     return result;
 };
 

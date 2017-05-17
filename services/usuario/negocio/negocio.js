@@ -23,17 +23,14 @@ NegocioUsuarios.prototype.add = async function(usuario) {
 };
 
 NegocioUsuarios.prototype.findByEmail = async function(email){
-   return RepositorioUsuarios.prototype.findByEmail(email);
+   return this.persistencia.findByEmail(email);
 };
 
 NegocioUsuarios.prototype.findByNome = async function(nome){
-    return RepositorioUsuarios.prototype.findByNome(nome);
+    return this.persistencia.findByNome (nome);
 }; 
 
 NegocioUsuarios.prototype.update = async function(usuario) {
-    if (!this.validarUsuario(usuario)) {
-        return false;
-    }
     return this.persistencia.update(usuario);
 };
 

@@ -19,8 +19,6 @@ NegocioUsuarios.prototype.validarUsuario = function(usuario) {
 }; 
 
 NegocioUsuarios.prototype.add = async function(usuario) {
-   
-    console.log("Chamou 3...");
     return this.persistencia.add(usuario);
 };
 

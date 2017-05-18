@@ -26,8 +26,6 @@ router.route('/usuarios')
 
 router.route('/usuarioPorEmail/:email')
 .get(function(req, res){
-    console.log('chamou');
-    console.log(req.params.email);
     controller.findByEmail(req.params.email).then(function(listaRetorno){
         res.json(listaRetorno);
     })

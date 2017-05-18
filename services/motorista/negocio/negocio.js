@@ -6,9 +6,7 @@ function NegocioMotoristas() {
 }
 
 NegocioMotoristas.prototype.validarMotorista = function(motorista) {
-    if (motorista.email.search("/[a-z][A-Z]_[0-9]\.]+\@[a-z][A-Z]_[0-9]\.]+/i") < 0) {
-        return false;
-    }
+
     if (motorista.cpf.length != 11) {
         return false;
     }
@@ -19,17 +17,15 @@ NegocioMotoristas.prototype.validarMotorista = function(motorista) {
 }; 
 
 NegocioMotoristas.prototype.add = async function(motorista) {
-   
-    console.log("Chamou add motorista...");
     return this.persistencia.add(motorista);
 };
 
 NegocioMotoristas.prototype.findByEmail = async function(email){
-   return RepositorioMotoristas.prototype.findByEmail(email);
+   return this.persistencia.findByEmail(email);
 };
 
 NegocioMotoristas.prototype.findByNome = async function(nome){
-    return RepositorioMotoristas.prototype.findByNome(nome);
+    return this.persistencia.findByNome(nome);
 }; 
 
 NegocioMotoristas.prototype.update = async function(motorista) {
@@ -40,7 +36,7 @@ NegocioMotoristas.prototype.update = async function(motorista) {
 };
 
 NegocioMotoristas.prototype.remove = async function(email){
-   return RepositorioMotoristas.prototype.remove(email);
+   return this.persistencia.remove(email);
 }; 
 
 module.exports = NegocioMotoristas;

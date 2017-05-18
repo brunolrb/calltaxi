@@ -35,7 +35,7 @@ NegocioUsuarios.prototype.update = async function(usuario) {
 };
 
 NegocioUsuarios.prototype.remove = async function(email){
-   return RepositorioUsuarios.prototype.remove(email);
-}; 
+   return this.persistencia.remove(email);
+};
 
 module.exports = NegocioUsuarios;

@@ -3,7 +3,7 @@ var UsuarioModel = require("../model/usuario.js");
 
 function UsuarioController(){
     this.negocio = new Negocio();
-}
+};
 
 UsuarioController.prototype.add = async function(usuario){
       return this.negocio.add(usuario);

@@ -1,5 +1,5 @@
 var RepositorioMotoristas = require('../persistencia/repositorio-mongo.js');
-var Motorista = require('../model/motorista.js')
+var Motorista = require('../model/motorista.js');
 
 function NegocioMotoristas() {
     this.persistencia = new RepositorioMotoristas();
